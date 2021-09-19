@@ -9,10 +9,12 @@ class PostController extends Controller
 {
     public function store(Request $request)
     {
-        dd($request);
+
         $content = $request->content;
         $post = new Post();
         $post->content = $content;
+        $post->user_id = "1";
         $post->save();
+        return $request;
     }
 }

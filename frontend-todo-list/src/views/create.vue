@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1>Todo-List</h1>
+    <todo-list></todo-list>
     <v-form ref="form" @submit.prevent="onsubmitForm">
       <v-row>
         <v-text-field
@@ -16,8 +16,10 @@
 
 <script>
 import axios from "axios";
+import TodoList from "../components/TodoList.vue";
 
 export default {
+  components: { TodoList },
   data() {
     return {
       content: "",
@@ -32,7 +34,7 @@ export default {
       axios
         .post("api/store", form)
         .then((res) => {
-          console.log(res);
+          console.log(res.data);
         })
         .catch((err) => {
           alert(err);
