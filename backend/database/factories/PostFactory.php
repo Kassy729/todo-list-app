@@ -3,20 +3,10 @@
 namespace Database\Factories;
 
 use App\Models\Post;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PostFactory extends Factory
 {
-    protected $users = null;
-    protected $posts = null;
-
-    public function __construct()
-    {
-        parent::__construct();
-        $this->users = User::all();
-        $this->posts = Post::all();
-    }
     /**
      * The name of the factory's corresponding model.
      *
@@ -32,8 +22,7 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'content' => $this->faker->sentence(),
-            'user_id' => User::factory()->create()->id,
+            //
         ];
     }
 }

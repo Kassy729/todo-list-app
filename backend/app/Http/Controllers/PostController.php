@@ -9,19 +9,11 @@ class PostController extends Controller
 {
     public function store(Request $request)
     {
+        $todo = $request->todo;
 
-        $content = $request->content;
         $post = new Post();
-        $post->content = $content;
-        $post->user_id = "1";
+        $post->user_id = 11;
+        $post->todo = $todo;
         $post->save();
-        return $request;
-    }
-
-    public function index()
-    {
-        $posts = Post::all();
-        $posts = Post::orderBy('created_at', 'desc')->get();
-        return $posts;
     }
 }
