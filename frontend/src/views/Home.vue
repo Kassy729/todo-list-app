@@ -1,5 +1,7 @@
 <template>
-  <todo-List></todo-List>
+  <v-container>
+    <todo-List></todo-List>
+  </v-container>
 </template>
 
 <script>
