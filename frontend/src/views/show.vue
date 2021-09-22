@@ -1,18 +1,15 @@
 <template>
   <v-container>
-    <index-dev />
+    <show-dev />
   </v-container>
 </template>
 
 <script>
-import indexDev from "../components/indexDev.vue";
+import showDev from "../components/showDev.vue";
 
 export default {
-  data() {
-    return {};
-  },
   components: {
-    indexDev,
+    showDev,
   },
 };
 </script>

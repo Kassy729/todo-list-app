@@ -18,10 +18,10 @@ class PostController extends Controller
         $post->save();
     }
 
-    public function devIndex()
+    public function indexDev()
     {
-        return 1;
         $posts = DevPost::all();
+        $posts = DevPost::orderby('created_at', 'desc')->get();
         return $posts;
     }
 
@@ -29,6 +29,12 @@ class PostController extends Controller
     {
         $post = Post::find($id);
         $post = Post::orderBy('created_at', 'desc')->get();
+        return $post;
+    }
+
+    public function showDev($id)
+    {
+        $post = DevPost::find($id);
         return $post;
     }
 
