@@ -1,8 +1,6 @@
 <template>
   <div>
-    <v-card v-for="todo in todos" :key="todo.id">
-      {{ todo.todo }}
-    </v-card>
+    <v-card></v-card>
   </div>
 </template>
 
@@ -12,15 +10,15 @@ import axios from "axios";
 export default {
   data() {
     return {
-      todos: [],
+      notes: [],
     };
   },
   mounted() {
     axios
-      .get("/api/show")
+      .get("/api/devIndex")
       .then((res) => {
-        this.todos = res.data;
         console.log(res.data);
+        this.notes = res.data;
       })
       .catch((err) => {
         console.log(err);

@@ -1,17 +1,15 @@
 <template>
   <v-container>
-    <todo-List></todo-List>
+    <Menu />
   </v-container>
 </template>
 
 <script>
-import TodoList from "../components/TodoList.vue";
+import Menu from "../components/Menu.vue";
 
 export default {
-  name: "Todolist",
-
   components: {
-    TodoList,
+    Menu,
   },
 };
 </script>

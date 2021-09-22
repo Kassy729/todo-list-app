@@ -1,12 +1,14 @@
 <template>
-  <v-form ref="form" @submit.prevent="addTodo">
-    <v-text-field
-      placeholder="todo"
-      v-model="todo"
-      style="width: 200px"
-    ></v-text-field>
-    <v-btn type="submit">작성</v-btn>
-  </v-form>
+  <v-card>
+    <v-form justify-center ref="form" @submit.prevent="addTodo">
+      <v-text-field
+        placeholder="todo"
+        v-model="todo"
+        style="width: 300px"
+      ></v-text-field>
+      <v-btn type="submit">작성</v-btn>
+    </v-form>
+  </v-card>
 </template>
 
 <script>

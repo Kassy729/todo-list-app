@@ -18,6 +18,10 @@ const routes = [
     component: Create,
   },
   {
+    path: "/create/:create_id",
+    component: Create,
+  },
+  {
     path: "/index",
     name: "Index",
     component: Index,

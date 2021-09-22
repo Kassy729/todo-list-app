@@ -1,15 +1,18 @@
 <template>
   <v-container>
-    <todo-list></todo-list>
-    <create-todo-list></create-todo-list>
+    <Menu />
+    <div>
+      <create-dev-note />
+    </div>
   </v-container>
 </template>
 
 <script>
-import TodoList from "../components/TodoList.vue";
-import CreateTodoList from "../components/CreateTodoList.vue";
+import CreateDevNote from "../components/CreateDevNote.vue";
+
+import Menu from "../components/Menu.vue";
 
 export default {
-  components: { TodoList, CreateTodoList },
+  components: { Menu, CreateDevNote },
 };
 </script>
