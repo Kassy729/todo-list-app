@@ -1,14 +1,12 @@
 <template>
   <v-container>
     <Menu />
-    <div>
-      <create-dev-note />
-    </div>
+    <create-dev-note />
   </v-container>
 </template>
 
 <script>
-import CreateDevNote from "../components/CreateDevNote.vue";
+import CreateDevNote from "../components/DevNote/CreateDevNote.vue";
 
 import Menu from "../components/Menu.vue";
 

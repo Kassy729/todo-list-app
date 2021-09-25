@@ -5,6 +5,7 @@
         제목 : {{ post.title }}
       </v-list-item-title>
     </v-card>
+    <router-link to="/create">작성하기</router-link>
   </div>
 </template>
 

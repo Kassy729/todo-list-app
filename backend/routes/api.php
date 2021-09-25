@@ -21,10 +21,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/store', [PostController::class, 'store']);
 
+Route::post('/devStore', [PostController::class, 'devStore']);
+
 Route::get('/indexDev', [PostController::class, 'indexDev']);
 
 Route::get('/showDev/{id}', [PostController::class, 'showDev']);
 
 Route::get('/{id}', [PostController::class, 'show']);
-
-Route::post('/devStore', [PostController::class, 'devStore']);

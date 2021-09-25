@@ -40,6 +40,7 @@ class PostController extends Controller
 
     public function devStore(Request $request)
     {
+        // return $request;
         $title = $request->title;
         $content = $request->content;
 
@@ -47,6 +48,13 @@ class PostController extends Controller
         $post->user_id = 11;
         $post->title = $title;
         $post->content = $content;
+
+        $filelName = null;
+        if ($request->hasFile('image')) {
+            $filelName = time() . '_' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->storeAs('public/images', $filelName);
+            $post->image = $filelName;
+        }
 
         $post->save();
     }

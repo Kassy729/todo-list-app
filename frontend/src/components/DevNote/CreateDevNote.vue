@@ -4,15 +4,25 @@
     <v-card>
       <v-form ref="form" @submit.prevent="onsubmitForm">
         <v-row>
-          <v-text-field placeholder="제목" v-model="title"> </v-text-field>
+          <v-text-field placeholder="제목" v-model="title" style="width: 300px">
+          </v-text-field>
         </v-row>
         <v-row>
-          <v-text-field placeholder="내용" v-model="content"> </v-text-field>
+          <v-text-field
+            placeholder="내용"
+            v-model="content"
+            style="width: 300px"
+          >
+          </v-text-field>
         </v-row>
-        <v-file-input label="File input" enctype="multipart/form-data">
-        </v-file-input>
+        <v-file-input
+          label="File input"
+          enctype="multipart/form-data"
+          @change="selectFile"
+        ></v-file-input>
         <v-btn type="submit">작성</v-btn>
       </v-form>
+      <router-link to="/index">목록보기</router-link>
     </v-card>
   </div>
 </template>
@@ -39,11 +49,15 @@ export default {
         .post("/api/devStore", form)
         .then((res) => {
           console.log(res);
+          window.location.href = "http://localhost:8080/index";
         })
         .catch((err) => {
           console.log(err);
           alert("실패");
         });
+    },
+    selectFile(file) {
+      this.image = file;
     },
   },
 };
