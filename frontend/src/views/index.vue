@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import indexDev from "../components/DevNote/indexDev.vue";
+import indexDev from "../components/DevNote/indexDevNote.vue";
 
 export default {
   data() {

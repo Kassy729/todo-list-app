@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import showDev from "../components/DevNote/showDev.vue";
+import showDev from "../components/DevNote/showDevNote.vue";
 
 export default {
   components: {
